@@ -4,7 +4,8 @@ import { useSpring, animated } from "react-spring";
 // import { button } from "./ui/button";
 import { useAuth } from "../contexts/AuthContext";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
-import UserDataForm from "./UserDataForm";
+import UserDataForm from "../components/UserDataForm";
+import RichTextEditor from "../components/TextEditor";
 
 export default function Dashboard() {
   const [count, setCount] = useState(0);
@@ -72,6 +73,11 @@ export default function Dashboard() {
       <div>
         <h2 className="text-2xl font-bold mb-4">User Profile</h2>
         <UserDataForm initialData={userData} onUpdate={handleUserDataUpdate} />
+      </div>
+      
+      <div className="border p-6 rounded-lg max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold mb-4">Rich Text Editor</h2>
+        <RichTextEditor />
       </div>
 
       <div>
